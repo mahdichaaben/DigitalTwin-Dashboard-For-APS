@@ -74,40 +74,7 @@ Full-stack platform bridging physical manufacturing equipment with digital servi
 
 ---
 
-## 🚀 Quick Start
 
-### With Docker (Recommended)
-
-```powershell
-git clone https://github.com/mahdichaaben/DigitalTwin-Dashboard-For-APS.git
-cd DigitalTwin-Dashboard-For-APS
-docker-compose up -d --build
-```
-
-### Manual Setup
-
-**Backend:**
-```powershell
-cd backend_dash
-dotnet restore
-dotnet ef database update
-dotnet run
-```
-
-**Frontend:**
-```powershell
-cd React-ts_frontend
-npm install
-npm run dev
-```
-
-**Edge Services:**
-```powershell
-cd nodeRed_Python_servers
-docker-compose up -d
-```
-
----
 
 ## � Screenshots
 
@@ -123,17 +90,6 @@ docker-compose up -d
 
 ---
 
-## 📁 Project Structure
-
-```
-├── backend_dash/           # ASP.NET Core API (Domain, Infrastructure, Services, WebApi, Migrations)
-├── React-ts_frontend/      # React + TypeScript dashboard
-├── nodeRed_Python_servers/ # Edge layer (Node-RED, MQTT, virtual stations)
-├── postgreSQL_grafana/     # Database & Grafana configs
-└── images/                 # Architecture diagrams and screenshots
-```
-
----
 
 ## 💻 Development
 
@@ -150,17 +106,6 @@ npm test                     # Frontend
 ```
 
 ---
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m 'Add feature'`
-4. Push: `git push origin feature/your-feature`
-5. Open Pull Request
-
----
-
 ## 🔗 Resources
 
 - **Demo Video:** [Watch on YouTube](https://www.youtube.com/watch?v=sUNCbplIqJw&feature=youtu.be)
