@@ -1,0 +1,93 @@
+module/v1/ff/NodeRed/SVR4PW6408/order
+
+drop logic 
+[
+  {
+    "timestamp": "2025-02-28T09:54:41.724Z",
+    "orderId": "0ed8e450-4348-4dfd-8e6a-74eb535c135b",
+    "orderUpdateId": 1,
+    "action": {
+      "id": "0ed8e450-4348-4dfd-8e6a-74eb535c135b",
+      "command": "INPUT_RGB",
+      "metadata": {}
+    }
+  },
+
+
+  
+{
+  "timestamp": "2025-02-28T09:55:18.130Z",
+  "serialNumber": "SVR4PW6408",
+  "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+  "orderUpdateId": 1,
+  "action": {
+    "command": "RGB_NFC",
+    "metadata": {
+      "type": "BLUE"
+    }
+  }
+}
+,
+  {
+    "timestamp": "2025-02-28T09:55:18.130Z",
+    "serialNumber": "SVR4PW6408",
+    "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+    "orderUpdateId": 1,
+    "action": {
+      "id": "b2496c1a-60f1-4fc6-9ec2-03c4c6be67ab",
+      "command": "DROP",
+      "metadata": {
+        "workpiece": {
+          "workpieceId": "043169ca341290",
+          "type": "BLUE",
+          "history": [],
+          "state": "PROCESSED"
+        }
+      }
+    }
+  }
+]
+
+pick logic 
+
+[
+
+
+{
+  "timestamp": "2025-02-28T09:55:18.130Z",
+  "serialNumber": "SVR4PW6408",
+  "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+  "orderUpdateId": 1,
+  "action": {
+    "command": "RGB_NFC",
+    "metadata": {
+      "type": "BLUE"
+    }
+  }
+}
+
+
+
+  {
+    "timestamp": "2025-02-28T09:55:18.130Z",
+    "serialNumber": "SVR4PW6408",
+    "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+    "orderUpdateId": 1,
+    "action": {
+      "id": "b2496c1a-60f1-4fc6-9ec2-03c4c6be67ab",
+      "command": "PICK",
+      "metadata": {
+        "workpiece": {
+          "workpieceId": "043169ca341290",
+          "type": "BLUE",
+          "history": [],
+          "state": "PROCESSED"
+        }
+      }
+    }
+  }
+
+
+]
+
+

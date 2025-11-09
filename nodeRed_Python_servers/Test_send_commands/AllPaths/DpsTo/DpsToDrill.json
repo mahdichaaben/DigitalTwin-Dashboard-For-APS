@@ -1,0 +1,84 @@
+[
+      {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:08:25.700Z",
+      "orderId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "orderUpdateId": 1,
+      "description": "From DPS to DRILL",
+      "nodes": [
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["SVR4PW6408-2"]
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["SVR4PW6408-2", "2-1"],
+          "action": {
+            "id": "6367b144-4350-434e-bfc8-6bb687dcef66",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["2-1", "1-3"],
+          "action": {
+            "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+            "type": "TURN",
+
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "3",
+          "linkedEdges": ["1-3", "3-SVR5H85384"],
+          "action": {
+            "id": "436a70c6-00b6-42b3-9fa0-ba321a809c16",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "SVR5H85384",
+          "linkedEdges": ["3-SVR5H85384"],
+          "action": {
+            "type": "DOCK",
+            "id": "6d8631b4-a0d1-4e13-a962-23e07a143b1f",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR4PW6408-2",
+          "length": 380,
+          "linkedNodes": ["SVR4PW6408", "2"]
+        },
+        {
+          "id": "2-1",
+          "length": 360,
+          "linkedNodes": ["2", "1"]
+        },
+        {
+          "id": "1-3",
+          "length": 360,
+          "linkedNodes": ["1", "3"]
+        },
+        {
+          "id": "3-SVR5H85384",
+          "length": 380,
+          "linkedNodes": ["3", "SVR5H85384"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

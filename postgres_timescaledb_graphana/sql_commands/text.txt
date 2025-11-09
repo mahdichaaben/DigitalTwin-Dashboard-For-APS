@@ -1,0 +1,102 @@
+-- Get current state for each station over time
+SELECT 
+    time_bucket('1 minute', timestamp) as time_bucket,
+    serialnumber,
+    last(modulestate, timestamp) as current_state,
+    last(actioncommand, timestamp) as current_action
+FROM (
+    SELECT timestamp, serialnumber, modulestate, actioncommand FROM mill_state
+    UNION ALL
+    SELECT timestamp, serialnumber, modulestate, actioncommand FROM drill_state  
+    UNION ALL
+    SELECT timestamp, serialnumber, modulestate, actioncommand FROM aiqs_state
+    UNION ALL
+    SELECT timestamp, serialnumber, modulestate, actioncommand FROM hbw_state
+    UNION ALL
+    SELECT timestamp, serialnumber, modulestate, actioncommand FROM dps_state
+) combined_states
+WHERE timestamp >= NOW() - INTERVAL '24 hours'
+GROUP BY time_bucket, serialnumber
+ORDER BY time_bucket, serialnumber;
+
+
+
+
+
+
+
+
+
+
+
+
+-- Calculate how long each station spends in each state
+WITH state_changes AS (
+    SELECT 
+        serialnumber,
+        modulestate,
+        timestamp as start_time,
+        LEAD(timestamp) OVER (PARTITION BY serialnumber ORDER BY timestamp) as end_time
+    FROM (
+        SELECT timestamp, serialnumber, modulestate FROM mill_state
+        UNION ALL
+        SELECT timestamp, serialnumber, modulestate FROM drill_state
+        UNION ALL
+        SELECT timestamp, serialnumber, modulestate FROM aiqs_state
+        UNION ALL
+        SELECT timestamp, serialnumber, modulestate FROM hbw_state
+        UNION ALL
+        SELECT timestamp, serialnumber, modulestate FROM dps_state
+    ) all_states
+    WHERE timestamp >= NOW() - INTERVAL '24 hours'
+)
+SELECT 
+    serialnumber,
+    modulestate,
+    COUNT(*) as state_occurrences,
+    AVG(EXTRACT(EPOCH FROM (end_time - start_time))) as avg_duration_seconds,
+    SUM(EXTRACT(EPOCH FROM (end_time - start_time))) as total_duration_seconds
+FROM state_changes
+WHERE end_time IS NOT NULL
+GROUP BY serialnumber, modulestate
+ORDER BY serialnumber, total_duration_seconds DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Track complete production cycles (PICK → PROCESS → DROP)
+WITH production_cycles AS (
+    SELECT 
+        serialnumber,
+        actionid,
+        MIN(CASE WHEN actioncommand = 'PICK' THEN timestamp END) as pick_start,
+        MAX(CASE WHEN actioncommand = 'DROP' THEN timestamp END) as drop_end,
+        STRING_AGG(DISTINCT modulestate ORDER BY timestamp) as states_sequence
+    FROM (
+        SELECT timestamp, serialnumber, actionid, actioncommand, modulestate FROM mill_state
+        UNION ALL
+        SELECT timestamp, serialnumber, actionid, actioncommand, modulestate FROM drill_state
+    ) processing_stations
+    WHERE actionid IS NOT NULL 
+    AND timestamp >= NOW() - INTERVAL '24 hours'
+    GROUP BY serialnumber, actionid
+)
+SELECT 
+    serialnumber,
+    actionid,
+    pick_start,
+    drop_end,
+    EXTRACT(EPOCH FROM (drop_end - pick_start)) as cycle_time_seconds,
+    states_sequence
+FROM production_cycles
+WHERE pick_start IS NOT NULL AND drop_end IS NOT NULL
+ORDER BY pick_start;

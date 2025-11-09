@@ -1,0 +1,68 @@
+[
+
+     {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:02:30.100Z",
+      "orderId": "d7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b",
+      "orderUpdateId": 1,
+      "description": "From DRILL to HBW",
+      "nodes": [
+        {
+          "id": "SVR5H85384",
+          "linkedEdges": ["SVR5H85384-3"]
+        },
+        {
+          "id": "3",
+          "linkedEdges": ["SVR5H85384-3", "3-1"],
+          "action": {
+            "id": "5ba43542-bc85-4796-9b9b-44d1d8308d04",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["3-1", "1-SVR5H85409"],
+          "action": {
+            "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["1-SVR5H85409"],
+          "action": {
+            "type": "DOCK",
+            "id": "ab916e13-a5f2-4b00-bbd4-e18f0940cfa3",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H85384-3",
+          "length": 380,
+          "linkedNodes": ["SVR5H85384", "3"]
+        },
+        {
+          "id": "3-1",
+          "length": 360,
+          "linkedNodes": ["3", "1"]
+        },
+        {
+          "id": "1-SVR5H85409",
+          "length": 380,
+          "linkedNodes": ["1", "SVR5H85409"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

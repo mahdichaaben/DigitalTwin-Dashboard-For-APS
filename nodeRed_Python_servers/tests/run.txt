@@ -1,0 +1,17 @@
+python -m venv tutorial-env
+
+python -m venv hbw-env
+
+tutorial-env\Scripts\activate
+
+hbw-env\Scripts\activate
+
+drill-env\Scripts\activate
+
+mill-env\Scripts\activate
+
+aiqs-env\Scripts\activate
+
+source tutorial-env/bin/activate
+
+pip install asyncua python-dotenv

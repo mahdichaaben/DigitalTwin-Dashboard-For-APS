@@ -1,0 +1,9 @@
+# Ignore all .env files recursively
+**/.env
+
+# Ignore all .pem files recursively
+**/*.pem
+
+**/*-env/
+
+**/nodered_data/

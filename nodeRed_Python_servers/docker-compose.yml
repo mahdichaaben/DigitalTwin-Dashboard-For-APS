@@ -1,0 +1,76 @@
+networks:
+  opcuanet:
+    driver: bridge
+
+services:
+  mosquitto:
+    image: mosquitto_dt:v1
+    container_name: mosquitto_container
+    ports:
+      - "1883:1883"
+      - "9001:9001" 
+    networks:
+      - opcuanet
+
+  drill:
+    image: drill_image:v1
+    container_name: drill_container
+    ports:
+      - "4840:4840"
+    networks:
+      - opcuanet
+
+  mill:
+    image: mill_image:v1
+    container_name: mill_container
+    ports:
+      - "4841:4841"
+    networks:
+      - opcuanet
+
+  quality:
+    image: quality_image:v1
+    container_name: quality_container
+    ports:
+      - "4842:4842"
+    networks:
+      - opcuanet
+
+
+  hbw:
+    image: hbw_image:v1
+    container_name: hbw_container
+    ports:
+      - "4843:4843"
+    networks:
+      - opcuanet
+
+  dps:
+    image: dps_image:v1
+    container_name: dps_container
+    ports:
+      - "4844:4844"
+    networks:
+      - opcuanet
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered_container
+    ports:
+      - "1880:1880" 
+    volumes:
+      - ./nodered_data:/data
+      - ./nodered_data/config:/usr/src/node-red/.config
+    environment:
+      - TZ=UTC
+    networks:
+      - opcuanet
+
+
+  txt_all:
+    image: txt_all:v1
+    container_name: txt_container
+    networks:
+      - opcuanet
+    depends_on:
+      - mosquitto

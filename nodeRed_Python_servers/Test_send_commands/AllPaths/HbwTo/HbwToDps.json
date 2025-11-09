@@ -1,0 +1,64 @@
+[
+  {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:55:31.618Z",
+      "orderId": "9da5c66d-2d1d-4312-a49a-ec7d72f4243c",
+      "orderUpdateId": 3,
+      "description": "From HBW to DPS",
+      "nodes": [
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["SVR5H85409-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H85409-1", "1-2"],
+          "action": {
+            "id": "a8b7c9d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["1-2", "2-SVR4PW6408"],
+          "action": {
+            "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["2-SVR4PW6408"],
+          "action": {
+            "type": "DOCK",
+            "id": "f9a0b1c2-d3e4-f5a6-b7c8-d9e0f1a2b3c4",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H85409-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H85409", "1"]
+        },
+        {
+          "id": "1-2",
+          "length": 360,
+          "linkedNodes": ["1", "2"]
+        },
+        {
+          "id": "2-SVR4PW6408",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4PW6408"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

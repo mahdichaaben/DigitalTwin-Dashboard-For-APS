@@ -1,0 +1,67 @@
+[
+      {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:06:05.500Z",
+      "orderId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "orderUpdateId": 1,
+      "description": "From HBW to AIQS",
+      "nodes": [
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["SVR5H85409-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H85409-1", "1-2"],
+          "action": {
+            "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["1-2", "2-SVR4LR8731"],
+          "action": {
+            "id": "6367b144-4350-434e-bfc8-6bb687dcef66",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "SVR4LR8731",
+          "linkedEdges": ["2-SVR4LR8731"],
+          "action": {
+            "type": "DOCK",
+            "id": "d1b48ccd-8948-4ec7-a358-fa8f732b5c8e",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H85409-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H85409", "1"]
+        },
+        {
+          "id": "1-2",
+          "length": 360,
+          "linkedNodes": ["1", "2"]
+        },
+        {
+          "id": "2-SVR4LR8731",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4LR8731"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

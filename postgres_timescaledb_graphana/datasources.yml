@@ -1,0 +1,18 @@
+apiVersion: 1
+
+datasources:
+  - name: Postgres
+    type: postgres
+    access: proxy
+    url: ${POSTGRES_CONTAINER_NAME}:${POSTGRES_PORT}
+    user: ${POSTGRES_USER}
+    secureJsonData:
+      password: ${POSTGRES_PASSWORD}
+    jsonData:
+      database: ${POSTGRES_DB}
+      sslmode: 'disable'
+      maxOpenConns: 100
+      maxIdleConns: 100
+      connMaxLifetime: 14400
+      postgresVersion: 1700     # Use 1300 for PostgreSQL 13, 1400 for 14, etc.
+      timescaledb: true         # Enable TimescaleDB support

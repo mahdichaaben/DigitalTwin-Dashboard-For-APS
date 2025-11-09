@@ -1,0 +1,99 @@
+docker build -t drill_image:v1 .
+
+docker run -p 4840:4840 drill_image:v1
+
+-----------
+
+docker build -t mill_image:v1 .
+
+
+docker run -p 4841:4841 mill_image:v1
+
+
+
+--------------
+docker build -t quality_image:v1 .
+
+
+docker run -p 4842:4842 quality_image:v1    ((-d))
+
+
+---------
+
+docker run -it quality_image:v1 bash
+
+docker run -it quality_image:v1 bash
+---------
+docker build -t mosquitto_dt:v1 .
+
+docker run -p 1883:1883 mosquitto_dt:v1
+
+----------------
+
+
+
+docker build -t hbw_image:v1 .
+docker run -p 4843:4843 hbw_image:v1 
+
+
+
+
+-----------------------------
+
+
+
+docker build -t dps_image:v1 .
+
+docker run -p 4844:4844 dps_image:v1
+
+
+
+
+
+
+-----------------------------
+docker run -p 4840:4840 drill_image:v1
+docker run -p 4841:4841 mill_image:v1
+docker run -p 4842:4842 quality_image:v1   
+
+
+
+opc.tcp://drill:4840
+opc.tcp://mill:4841
+opc.tcp://quality:4842
+
+
+
+
+
+
+
+
+
+
+docker exec -it nodered_container sh
+
+
+cd /data/.config/node-opcua-default-nodejs/PKI/own
+
+cd /usr/src/node-red/.config/node-opcua-default-nodejs/PKI/own
+rm -rf /data/.config/node-opcua-default-nodejs/PKI
+
+
+
+rm -rf /usr/src/node-red/.config/node-opcua-default-nodejs/PKI/
+
+
+openssl req -newkey rsa:2048 -nodes -keyout private_key.pem -x509 -days 365 -out client_certificate.pem
+
+
+
+
+------------
+
+docker build -t txt_all:v1 .
+
+docker run --rm txt_all
+
+
+docker logs txt_container

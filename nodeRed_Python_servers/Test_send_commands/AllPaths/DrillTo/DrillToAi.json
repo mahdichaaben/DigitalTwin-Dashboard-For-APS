@@ -1,0 +1,91 @@
+ [
+ 
+ {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:59:12.944Z",
+      "orderId": "b5d370e3-c585-4b51-b4cb-d79bfd8d2542",
+      "orderUpdateId": 6,
+      "description": "From DRILL to AIQS",
+      "nodes": [
+        {
+          "id": "SVR5H85384",
+          "linkedEdges": ["SVR5H85384-3"]
+        },
+        {
+          "id": "3",
+          "linkedEdges": ["SVR5H85384-3", "3-1"],
+          "action": {
+            "id": "5ba43542-bc85-4796-9b9b-44d1d8308d04",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["3-1", "1-2"],
+          "action": {
+            "id": "b148724e-5ae5-4a29-930e-324ea2fd1b10",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["1-2", "2-SVR4LR8731"],
+          "action": {
+            "id": "56a5dae2-ad10-4fb7-9456-c7b97cc1688f",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "SVR4LR8731",
+          "linkedEdges": ["2-SVR4LR8731"],
+          "action": {
+            "type": "DOCK",
+            "id": "d1b48ccd-8948-4ec7-a358-fa8f732b5c8e",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+
+
+      ],
+      "edges": [
+        {
+          "id": "SVR5H85384-3",
+          "length": 380,
+          "linkedNodes": ["SVR5H85384", "3"]
+        },
+        {
+          "id": "3-1",
+          "length": 360,
+          "linkedNodes": ["3", "1"]
+        },
+                {
+          "id": "1-2",
+          "length": 360,
+          "linkedNodes": ["1", "2"]
+        },
+        {
+          "id": "2-SVR4LR8731",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4LR8731"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+
+
+]

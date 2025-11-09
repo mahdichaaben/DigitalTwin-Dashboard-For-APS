@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-02-28T09:55:16.400Z",
+  "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+  "orderUpdateId": 0,
+  "nodes": [
+    {
+      "id": "SVR4PW6408",
+      "linkedEdges": [],
+      "action": {
+        "type": "DOCK",
+        "id": "dd463475-c043-43df-86fb-6d9cde3b2a30",
+        "metadata": {
+          "loadId": "043169ca341290",
+          "loadType": "BLUE",
+          "loadPosition": "1"
+        }
+      }
+
+
+      
+    }
+  ],
+  "edges": [],
+  "serialNumber": "4gcx"
+}

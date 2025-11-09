@@ -1,0 +1,60 @@
+version: "3.8"
+
+networks:
+  opcua-net:
+    driver: bridge
+
+services:
+  mosquitto:
+    image: mosquitto_dt:v1
+    container_name: mosquitto_container
+    ports:
+      - "1883:1883"
+    networks:
+      - opcua-net
+
+  drill:
+    image: drill_image:v1
+    container_name: drill_container
+    ports:
+      - "4840:4840"
+    networks:
+      - opcua-net
+
+  mill:
+    image: mill_image:v1
+    container_name: mill_container
+    ports:
+      - "4841:4841"
+    networks:
+      - opcua-net
+
+  quality:
+    image: quality_image:v1
+    container_name: quality_container
+    ports:
+      - "4842:4842"
+    networks:
+      - opcua-net
+
+
+  hbw:
+    image: hbw_image:v1
+    container_name: hbw_container
+    ports:
+      - "4843:4843"
+    networks:
+      - opcua-net
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered_container
+    ports:
+      - "1880:1880" 
+    volumes:
+      - ./nodered_data:/data
+      - ./nodered_data/config:/usr/src/node-red/.config
+    environment:
+      - TZ=UTC
+    networks:
+      - opcua-net

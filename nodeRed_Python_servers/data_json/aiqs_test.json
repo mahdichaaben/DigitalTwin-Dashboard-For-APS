@@ -1,0 +1,196 @@
+// "module/v1/ff/AIQS001/order
+
+{
+  "serialNumber": "AIQS001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "PICK",
+
+    "metadata": {   
+        "type":  "BLUE"                  
+    }
+    
+  }
+
+}
+
+
+// "module/v1/ff/AIQS001/state
+
+
+
+{
+  "headerId": 9,
+  "loads": [
+    {
+      "loadType": "BLUE"
+    }
+  ],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "AIQS001",
+  "timestamp": "2025-06-06T01:00:30.152Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WCQ"
+}
+
+//module/v1/ff/AIQS001/order
+
+{
+  "serialNumber": "AIQS001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "CHECK_QUALITY",
+
+    "metadata": {   
+        "type":  "BLUE"                  
+    }
+    
+  }
+
+}
+
+
+//module/v1/ff/AIQS001/state
+
+
+{
+  "headerId": 8,
+  "loads": [
+    {
+      "loadType": "BLUE"
+    }
+  ],
+  "actionState": {
+    "command": "CHECK_QUALITY",
+    "id": "action-0001",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "AIQS001",
+  "timestamp": "2025-06-06T01:13:43.441Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RCQ"
+}
+
+
+
+//module/v1/ff/AIQS001/state
+
+
+{
+  "headerId": 10,
+  "loads": [
+    {
+      "loadType": "BLUE"
+    }
+  ],
+  "actionState": {
+    "command": "CHECK_QUALITY",
+    "id": "action-0001",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED",
+    "result": "PASSED"
+  },
+  "serialNumber": "AIQS001",
+  "timestamp": "2025-06-06T01:13:57.923Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WDROP"
+}
+
+
+
+//module/v1/ff/AIQS001/order
+{
+  "serialNumber": "AIQS001",
+  "orderId": "0",
+  "orderUpdateId": 100,
+  "action": {
+    "id": "action-0003",
+    "command": "DROP"
+    
+  },
+  "metadata": {                      
+    "type":  "BLUE"                  
+   }
+}
+
+
+//module/v1/ff/AIQS001/state
+{
+  "headerId": 12,
+  "loads": [
+    {
+      "loadType": "BLUE"
+    }
+  ],
+  "actionState": {
+    "id": "action-0003",
+    "command": "DROP",
+    "state": "RUNNING"
+  },
+  "serialNumber": "AIQS001",
+  "timestamp": "2025-06-06T01:14:06.040Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RDROP"
+}
+
+
+{
+  "headerId": 14,
+  "loads": [],
+  "actionState": {
+    "id": "action-0003",
+    "command": "DROP",
+    "state": "FINISHED"
+  },
+  "serialNumber": "AIQS001",
+  "timestamp": "2025-06-06T01:14:33.924Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+

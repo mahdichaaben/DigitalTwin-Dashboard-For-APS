@@ -1,0 +1,54 @@
+[
+  {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:04:45.300Z",
+      "orderId": "f9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d",
+      "orderUpdateId": 1,
+      "description": "From MILL to HBW",
+      "nodes": [
+        {
+          "id": "SVR5H59286",
+          "linkedEdges": ["SVR5H59286-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H59286-1", "1-SVR5H85409"],
+          "action": {
+            "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["1-SVR5H85409"],
+          "action": {
+            "type": "DOCK",
+            "id": "ab916e13-a5f2-4b00-bbd4-e18f0940cfa3",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H59286-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H59286", "1"]
+        },
+        {
+          "id": "1-SVR5H85409",
+          "length": 380,
+          "linkedNodes": ["1", "SVR5H85409"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

@@ -1,0 +1,230 @@
+
+//msg.topic = "module/v1/ff/DRILL001/order";
+
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "PICK",
+
+    "metadata": {   
+        "type":  "BLUE"                  
+    }
+    
+  }
+
+},
+
+// the result of that order will be one meassage that tel us that pick is runing and after certain time it tel us that the process is finshed 
+
+
+//msg.topic = "module/v1/ff/DRILL001/state";
+
+
+{
+  "headerId": 2,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:46:19.044Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "PICKBUSY"
+}
+
+
+//msg.topic = "module/v1/ff/DRILL001/state ";
+
+
+{
+  "headerId": 3,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:46:42.997Z",
+  "errors": [],
+  "orderUpdateId": 2,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WAITING_AFTER_PICK"
+}
+
+
+//msg.topic = "module/v1/ff/DRILL001/order";  after detetcting that state is finished and "moduleState": "WAITING_AFTER_PICK"  that we can send order 
+
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 4,
+  "action": {
+    "id": "action-0002",
+    "command": "DRILL",
+      "metadata": {   
+    "duration": 20,                      
+    "type":  "BLUE"                  
+   }
+    
+  }
+
+}
+
+// the response of that will be twoo message 
+
+//msg.topic = "module/v1/ff/DRILL001/state";
+
+
+{
+  "headerId": 4,
+  "loads": [],
+  "actionState": {
+    "id": "action-0002",
+    "command": "DRILL",
+    "metadata": {
+      "duration": 20,
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:48:09.376Z",
+  "errors": [],
+  "orderUpdateId": 2,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "DRILLBUSY"
+}
+
+//msg.topic = "module/v1/ff/DRILL001/state";
+
+{
+  "headerId": 5,
+  "loads": [],
+  "actionState": {
+    "id": "action-0002",
+    "command": "DRILL",
+    "metadata": {
+      "duration": 20,
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:48:20.198Z",
+  "errors": [],
+  "orderUpdateId": 2,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WAITING_AFTER_DRILL"
+}
+
+
+
+
+
+
+
+
+///  after "moduleState": "WAITING_AFTER_DRILL"  and  "state": "FINISHED"  we can send //msg.topic = "module/v1/ff/DRILL001/order";
+
+
+//msg.topic = "module/v1/ff/DRILL001/order";
+
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 5,
+  "action": {
+    "id": "action-0003",
+    "command": "DROP"
+  },
+  "metadata": {
+    "type": "BLUE"
+  }
+}
+
+
+
+//msg.topic = "module/v1/ff/DRILL001/state";
+
+{
+  "headerId": 6,
+  "loads": [],
+  "actionState": {
+    "id": "action-0003",
+    "command": "DROP",
+    "state": "RUNNING"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:49:00.256Z",
+  "errors": [],
+  "orderUpdateId": 2,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "DROPBUSY"
+}
+
+//msg.topic = "module/v1/ff/DRILL001/state";
+
+{
+  "headerId": 7,
+  "loads": [],
+  "actionState": {
+    "id": "action-0003",
+    "command": "DROP",
+    "state": "FINISHED"
+  },
+  "serialNumber": "DRILL001",
+  "timestamp": "2025-06-05T21:49:25.201Z",
+  "errors": [],
+  "orderUpdateId": 2,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+
+
+    
+
+
+
+
+/// now you task is to make a json file for the orders ( list of orders without time stamp   and you will use a python script to publish this list of command and you add the time stamp and to pass from onr order //msg.topic = "module/v1/ff/DRILL001/order"; to the second order to the third we need to check that the status throuth this topiic module/v1/ff/DRILL001/state   this will message will be obtainned throught the brokder localhost 1883 and alsoo the command will be published on same brokker need to be finished not runing so we can publish the second order )

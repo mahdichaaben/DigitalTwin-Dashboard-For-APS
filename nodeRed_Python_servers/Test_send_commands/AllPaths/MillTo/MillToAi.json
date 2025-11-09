@@ -1,0 +1,71 @@
+ [ {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:59:57.157Z",
+      "orderId": "b5d370e3-c585-4b51-b4cb-d79bfd8d2542",
+      "orderUpdateId": 10,
+      "description": "From MILL to QAIS",
+      "nodes": [
+        {
+          "id": "SVR5H59286",
+          "linkedEdges": ["SVR5H59286-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H59286-1", "1-2"],
+          "action": {
+            "id": "91084976-31d0-470e-b595-8b596a4ae39f",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["1-2", "2-SVR4LR8731"],
+          "action": {
+            "id": "56a5dae2-ad10-4fb7-9456-c7b97cc1688f",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "SVR4LR8731",
+          "linkedEdges": ["2-SVR4LR8731"],
+          "action": {
+            "type": "DOCK",
+            "id": "d1b48ccd-8948-4ec7-a358-fa8f732b5c8e",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H59286-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H59286", "1"]
+        },
+        {
+          "id": "1-2",
+          "length": 360,
+          "linkedNodes": ["1", "2"]
+        },
+        {
+          "id": "2-SVR4LR8731",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4LR8731"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+
+
+ ]

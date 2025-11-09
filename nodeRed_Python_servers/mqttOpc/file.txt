@@ -1,0 +1,120 @@
+{
+  "flowName": "DRILL",
+  "moduleState": "IDLE",
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "loads": [],
+  "headerId": 1,
+
+  MQTT_topic:"module/v1/ff/DRILL-001",
+
+
+  "actionState": {
+    "state": "FINISHED",
+    "command": "PICK"
+  },
+
+
+  "serialNumber": "DRILL-001",
+
+
+
+
+  "model": "DRILL",
+  "errors": [],
+
+
+
+
+  "state": {
+    "headerId": 0,
+    "loads": [],
+    "actionState": {state:"FINISHED"},
+    "serialNumber": "DRILL-001",
+    "timestamp": "timestamp",
+    "errors": [],
+    "orderUpdateId": 0,
+    "orderId": "",
+    "paused": false,
+    "metadata": {
+      "opcuaState": "connected"
+    }
+  },
+    "factsheet": {
+    "protocolFeatures": {
+      "moduleActions": [
+        {
+          "actionType": "PICK",
+          "actionScopes": ["ORDER"],
+          "actionParameters": []
+        },
+        {
+          "actionType": "PLACE",
+          "actionScopes": ["ORDER"],
+          "actionParameters": []
+        }
+      ]
+    }
+  },
+
+
+  "connection": {
+    "headerId": 0,
+    "timestamp": "timestamp",
+    "ip": "drill",
+    "version": "v1.0",
+    "manufacturer": "Fischertechnik",
+    "serialNumber": "DRILL-001",
+    "connectionState": "ONLINE"
+  },
+  "opcuaState": "connected"
+}
+
+
+
+module/v1/ff/DRILL001/order
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "PICK"
+    
+  },
+  "metadata": {   
+    "duration": 3,                      
+    "type":  "BLUE"                  
+   }
+}
+
+
+
+module/v1/ff/DRILL001/order
+{
+
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+
+
+  "action": {
+    "command": "PICK",
+    "id": "action-0001",
+    "scope": "ORDER"
+  },
+
+  "metadata": {                         
+    "type":  "BLUE"                  
+   }
+}
+
+
+
+
+
+
+
+module/v1/ff/DRILL001/state
+
+state = {"headerId":0,"loads":[],"actionState":null,"serialNumber":"DRILL001","timestamp":"2025-05-27T20:11:26.168Z","errors":[],"orderUpdateId":0,"orderId":"","paused":false,"metadata":{"opcuaState":"connected"}}

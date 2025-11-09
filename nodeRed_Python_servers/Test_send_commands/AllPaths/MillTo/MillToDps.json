@@ -1,0 +1,67 @@
+[
+  {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-08-12T10:07:10.600Z",
+      "orderId": "29461d0d-3a22-4e35-b3d8-faf6ca1394bd",
+      "orderUpdateId": 1,
+      "description": "From MILL to DPS",
+      "nodes": [
+        {
+          "id": "SVR5H59286",
+          "linkedEdges": ["SVR5H59286-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H59286-1", "1-2"],
+          "action": {
+            "id": "4ee44b76-7c3d-461a-ac53-2aa925cf2a9f",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["1-2", "2-SVR4PW6408"],
+          "action": {
+            "id": "ac187b22-d9c5-4b35-af32-b391b3d117c2",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["2-SVR4PW6408"],
+          "action": {
+            "type": "DOCK",
+            "id": "8b967b58-02b1-49e0-8a8c-34f266049cb9",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H59286-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H59286", "1"]
+        },
+        {
+          "id": "1-2",
+          "length": 360,
+          "linkedNodes": ["1", "2"]
+        },
+        {
+          "id": "2-SVR4PW6408",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4PW6408"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

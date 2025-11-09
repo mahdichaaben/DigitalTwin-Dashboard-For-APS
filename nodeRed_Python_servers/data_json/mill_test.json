@@ -1,0 +1,176 @@
+//msg.topic = "module/v1/ff/MILL001/order";
+
+{
+  "serialNumber": "MILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "PICK",
+
+    "metadata": {   
+        "type":  "BLUE"                  
+    }
+    
+  }
+
+}
+//msg.topic = "module/v1/ff/MILL001/state";
+
+{
+  "headerId": 4,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "MILL001",
+  "timestamp": "2025-06-06T01:39:15.946Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "PICKBUSY"
+}
+
+//msg.topic = "module/v1/ff/MILL001/state";
+
+{
+  "headerId": 5,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "MILL001",
+  "timestamp": "2025-06-06T01:39:39.323Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WAITING_AFTER_PICK"
+}
+
+
+
+
+
+//msg.topic = "module/v1/ff/MILL001/order";
+
+{
+  "serialNumber": "MILL001",
+  "orderId": "0",
+  "orderUpdateId": 4,
+  "action": {
+    "id": "action-0002",
+    "command": "MILL",
+      "metadata": {   
+    "duration": 20,                      
+    "type":  "BLUE"                  
+   }
+    
+  }
+
+}
+
+//msg.topic = "module/v1/ff/MILL001/state";
+{
+  "headerId": 6,
+  "loads": [],
+  "actionState": {
+    "id": "action-0002",
+    "command": "MILL",
+    "metadata": {
+      "duration": 20,
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "MILL001",
+  "timestamp": "2025-06-06T01:41:45.821Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "MILLBUSY"
+}
+
+{
+  "headerId": 7,
+  "loads": [],
+  "actionState": {
+    "id": "action-0002",
+    "command": "MILL",
+    "metadata": {
+      "duration": 20,
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "MILL001",
+  "timestamp": "2025-06-06T01:41:56.522Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "WAITING_AFTER_MILL"
+}
+
+//msg.topic = "module/v1/ff/MILL001/state";
+
+{
+  "serialNumber": "MILL001",
+  "orderId": "0",
+  "orderUpdateId": 5,
+  "action": {
+    "id": "action-0003",
+    "command": "DROP"
+    
+  },
+  "metadata": {                      
+    "type":  "BLUE"                  
+   }
+}
+
+
+
+//msg.topic = "module/v1/ff/MILL001/state";";
+{
+  "headerId": 8,
+  "loads": [],
+  "actionState": {
+    "id": "action-0003",
+    "command": "DROP",
+    "state": "RUNNING"
+  },
+  "serialNumber": "MILL001",
+  "timestamp": "2025-06-06T01:42:32.552Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "DROPBUSY"
+}

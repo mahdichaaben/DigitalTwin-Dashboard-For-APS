@@ -1,0 +1,166 @@
+[
+//msg.topic = "fts/v1/ff/80F4/state";
+    {"timestamp": "2025-06-05T21:27:43.733206+00:00", "serialNumber": "80F4", "actions": [{"actionType": "findInitialDockPosition", "actionId": "ad5328c1-2d42-46fe-9fd8-c29831f5871d", "metadata": {"nodeId": "SVR4PW6408"}}], "actionState": {"state": "running"}},
+//msg.topic = "fts/v1/ff/80F4/state";
+    {"timestamp": "2025-06-05T21:27:48.745166+00:00", "serialNumber": "80F4", "actions": [{"actionType": "findInitialDockPosition", "actionId": "ad5328c1-2d42-46fe-9fd8-c29831f5871d", "metadata": {"nodeId": "SVR4PW6408"}}], "actionState": {"state": "finished"}},
+
+
+    //msg.topic = "module/v1/ff/DPS001/state";
+{
+  "headerId": 2,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "DROP",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "DPS001",
+  "timestamp": "2025-06-05T21:30:37.198Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+,
+//msg.topic = "fts/v1/ff/80F4/state";
+
+{
+  "timestamp": "2025-06-05T21:31:40.410980+00:00",
+  "orderId": "9da5c66d-2d1d-4312-a49a-ec7d72f4243c",
+  "orderUpdatedId": 2,
+  "nodes": [
+    {
+      "id": "SVR4PW6408",
+      "linkedEdges": [
+        "SVR4PW6408-2"
+      ]
+    },
+    {
+      "id": "2",
+      "linkedEdges": [
+        "SVR4PW6408-2",
+        "2-1"
+      ],
+      "action": {
+        "id": "6367b144-4350-434e-bfc8-6bb687dcef66",
+        "type": "PASS"
+      }
+    },
+    {
+      "id": "1",
+      "linkedEdges": [
+        "2-1",
+        "1-SVR5H85409"
+      ],
+      "action": {
+        "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+        "type": "PASS"
+      }
+    },
+    {
+      "id": "SVR5H85409",
+      "linkedEdges": [
+        "1-SVR5H85409"
+      ],
+      "action": {
+        "type": "DOCK",
+        "id": "ab916e13-a5f2-4b00-bbd4-e18f0940cfa3",
+        "metadata": {
+          "loadId": "043169ca341290",
+          "loadType": "BLUE",
+          "loadPosition": "1"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "SVR4PW6408-2",
+      "length": 380,
+      "linkedNodes": [
+        "SVR4PW6408",
+        "2"
+      ]
+    },
+    {
+      "id": "2-1",
+      "length": 360,
+      "linkedNodes": [
+        "2",
+        "1"
+      ]
+    },
+    {
+      "id": "1-SVR5H85409",
+      "length": 380,
+      "linkedNodes": [
+        "1",
+        "SVR5H85409"
+      ]
+    }
+  ],
+  "serialNumber": "4gcx",
+  "actionState": {
+    "state": "finished"
+  }
+},
+//msg.topic = "module/v1/ff/HBW001/state";
+
+
+
+{
+  "headerId": 1,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-05T21:32:50.274Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RPICK"
+},
+
+//msg.topic = "module/v1/ff/HBW001/state";
+{
+  "headerId": 2,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-05T21:34:14.245Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+]

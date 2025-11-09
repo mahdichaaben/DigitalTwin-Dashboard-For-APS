@@ -1,0 +1,157 @@
+[
+    
+    {
+  "headerId": 1,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:02:07.046Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RPICK"
+}
+
+,
+{
+  "headerId": 2,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:03:30.493Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+
+]
+
+[
+
+    {
+  "headerId": 3,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "DROP",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:05:34.110Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RDROP"
+},
+
+{
+  "headerId": 4,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "DROP",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED",
+    "result": "unknown"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:06:27.695Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+
+
+]
+
+
+
+[
+
+    {
+  "headerId": 1,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "RUNNING"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:26:25.759Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "RPICK"
+}////  {
+  "headerId": 2,
+  "loads": [],
+  "actionState": {
+    "id": "action-0001",
+    "command": "PICK",
+    "rackPosition": "A2",
+    "metadata": {
+      "type": "BLUE"
+    },
+    "state": "FINISHED"
+  },
+  "serialNumber": "HBW001",
+  "timestamp": "2025-06-07T21:27:49.830Z",
+  "errors": [],
+  "orderUpdateId": 0,
+  "orderId": "0",
+  "paused": false,
+  "metadata": {
+    "opcuaState": "connected"
+  },
+  "moduleState": "IDLE"
+}
+]

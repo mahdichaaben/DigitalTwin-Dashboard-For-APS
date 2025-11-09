@@ -1,0 +1,55 @@
+[  {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:00:38.690Z",
+      "orderId": "b5d370e3-c585-4b51-b4cb-d79bfd8d2542",
+      "orderUpdateId": 14,
+      "description": "From QAIS to DPS",
+      "nodes": [
+        {
+          "id": "SVR4LR8731",
+          "linkedEdges": ["SVR4LR8731-2"]
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["SVR4LR8731-2", "2-SVR4PW6408"],
+          "action": {
+            "id": "1c2fa219-3c87-44fe-ac27-f19c95753bd4",
+            "type": "TURN",
+            "metadata": {
+              "direction": "LEFT"
+            }
+          }
+        },
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["2-SVR4PW6408"],
+          "action": {
+            "type": "DOCK",
+            "id": "74cb9844-ff20-469c-96f4-a35a5c199f1e",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR4LR8731-2",
+          "length": 380,
+          "linkedNodes": ["SVR4LR8731", "2"]
+        },
+        {
+          "id": "2-SVR4PW6408",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4PW6408"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+
+
+]

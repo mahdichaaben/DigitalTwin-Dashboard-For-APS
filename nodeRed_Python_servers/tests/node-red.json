@@ -1,0 +1,309 @@
+[
+    {
+        "id": "inject_start_drill",
+        "type": "inject",
+        "z": "a10c7e0fed301fc3",
+        "name": "Start Drill",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "prepare_cmd_start_write"
+            ]
+        ]
+    },
+    {
+        "id": "prepare_cmd_start_write",
+        "type": "function",
+        "z": "a10c7e0fed301fc3",
+        "name": "Write cmd__start_drill = true",
+        "func": "msg.payload = {\n    injectType: \"write\",\n    nodetype: \"inject\",\n    nodesToWrite: [\n        {\n            nodeId: \"ns=4;i=99\", // Replace with your actual NodeId for cmd__start_drill\n            datatypeName: \"Boolean\",\n            value: true\n        }\n    ]\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "opcua_write"
+            ]
+        ]
+    },
+    {
+        "id": "opcua_write",
+        "type": "OPCUA-IIoT-Write",
+        "z": "a10c7e0fed301fc3",
+        "connector": "opcua_connector",
+        "name": "Write to OPC UA Server",
+        "justValue": true,
+        "showStatusActivities": false,
+        "showErrors": true,
+        "x": 650,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46561f7c2d4569e9",
+        "type": "group",
+        "z": "a10c7e0fed301fc3",
+        "name": "OPCUA-INPUT",
+        "style": {
+            "label": true,
+            "stroke": "#7fb7df"
+        },
+        "nodes": [
+            "40c34ebfb7d7af20",
+            "3ac391ab523d7ba1",
+            "2b54835467e6ae5f",
+            "60f905fcaeed91b8",
+            "13746c41105e493d",
+            "524d74a85f5ddceb",
+            "a301ee707cd72ea8",
+            "6cbfd62b3690d6c2"
+        ],
+        "x": 114,
+        "y": 199,
+        "w": 912,
+        "h": 282
+    },
+    {
+        "id": "40c34ebfb7d7af20",
+        "type": "debug",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 590,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3ac391ab523d7ba1",
+        "type": "function",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "function 9",
+        "func": "\n// Zugriff auf das \"payload\"-Objekt\nlet payload = msg.payload;\n\n// Überprüfen, ob die benötigten Daten vorhanden sind\nif (payload && payload.value && payload.value.value !== undefined) {\n    let variableName = payload.nodeId || \"Unbekannt\";\n    let variableValue = payload.value.value;\n\n    // Das Ergebnis in die msg.payload schreiben\n    msg.payload = {\n        variableName: variableName,\n        variableValue: variableValue\n    };\n} else {\n    msg.payload = { error: \"Datenstruktur unvollständig oder ungültig\" };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 280,
+        "wires": [
+            [
+                "2b54835467e6ae5f",
+                "60f905fcaeed91b8"
+            ]
+        ]
+    },
+    {
+        "id": "2b54835467e6ae5f",
+        "type": "debug",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 750,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "60f905fcaeed91b8",
+        "type": "function",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "function 10",
+        "func": "// Zugriff auf das \"payload\"-Objekt\nlet payload = msg.payload;\n\n// Sicherstellen, dass die benötigten Felder existieren\nif (payload && payload.variableName && payload.variableValue && payload.variableValue.value !== undefined) {\n    let variableName = `DRILL;${payload.variableName}`; // Variablenname\n    let variableValue = payload.variableValue.value; // Variablenwert\n\n    // Debug-Ausgabe\n    //node.warn(`Variable: ${variableName}, Wert: ${variableValue}`);\n\n    // Ausgabe in msg.payload formatieren\n    msg.payload = {\n        variableName: variableName,\n        variableValue: variableValue\n    };\n} else {\n    // Debug-Ausgabe für Fehler\n    node.warn(\"Ungültige Datenstruktur im Payload.\");\n    // Originalnachricht unverändert weitergeben\n    msg.payload = {\n        error: \"Ungültige Datenstruktur\",\n        originalPayload: payload\n    };\n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 320,
+        "wires": [
+            [
+                "6cbfd62b3690d6c2"
+            ]
+        ]
+    },
+    {
+        "id": "13746c41105e493d",
+        "type": "OPCUA-IIoT-Inject",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "injectType": "read",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "startDelay": "15",
+        "name": "SPS_DRILL",
+        "addressSpaceItems": [
+            {
+                "name": "raus",
+                "nodeId": "ns=4;i=31",
+                "datatypeName": ""
+            },
+            {
+                "name": "rein",
+                "nodeId": "ns=4;i=30",
+                "datatypeName": ""
+            },
+            {
+                "name": "runter",
+                "nodeId": "ns=4;i=32",
+                "datatypeName": ""
+            },
+            {
+                "name": "Bohrer",
+                "nodeId": "ns=4;i=34",
+                "datatypeName": ""
+            },
+            {
+                "name": "Band-Bohrer",
+                "nodeId": "ns=4;i=28",
+                "datatypeName": ""
+            },
+            {
+                "name": "Band-FTS",
+                "nodeId": "ns=4;i=29",
+                "datatypeName": ""
+            }
+        ],
+        "x": 230,
+        "y": 240,
+        "wires": [
+            [
+                "a301ee707cd72ea8"
+            ]
+        ]
+    },
+    {
+        "id": "524d74a85f5ddceb",
+        "type": "comment",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "MILL_OPC_UA",
+        "info": "",
+        "x": 220,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a301ee707cd72ea8",
+        "type": "OPCUA-IIoT-Listener",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "connector": "498894fd271dd208",
+        "action": "subscribe",
+        "queueSize": "1000",
+        "name": "",
+        "topic": "",
+        "justValue": true,
+        "useGroupItems": false,
+        "showStatusActivities": false,
+        "showErrors": true,
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "40c34ebfb7d7af20",
+                "3ac391ab523d7ba1"
+            ]
+        ]
+    },
+    {
+        "id": "6cbfd62b3690d6c2",
+        "type": "link out",
+        "z": "a10c7e0fed301fc3",
+        "g": "46561f7c2d4569e9",
+        "name": "link out 14",
+        "mode": "link",
+        "links": [
+            "45135d5cbdca9a11"
+        ],
+        "x": 985,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "498894fd271dd208",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://127.0.0.1:4840",
+        "endpointMustExist": false,
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "name": "DRILL_Server",
+        "showErrors": false,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "autoSelectRightEndpoint": false,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": "10"
+    },
+    {
+        "id": "opcua_connector",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://127.0.0.1:4840",
+        "endpointMustExist": false,
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "name": "Local OPC UA",
+        "showErrors": true,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "autoSelectRightEndpoint": false,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": ""
+    }
+]

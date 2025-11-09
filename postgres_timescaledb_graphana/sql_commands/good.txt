@@ -1,0 +1,14 @@
+SELECT 
+    a.timestamp AS time,
+    a.value AS sensor_a_value,
+    b.value AS sensor_b_value
+FROM public.sensor a
+JOIN public.sensor b 
+    ON a.timestamp = b.timestamp
+WHERE 
+    a.sensor_id = 'drill_humidity1'
+    AND b.sensor_id = 'mill_humidity1'
+    AND a.timestamp >= $__timeFrom()
+    AND a.timestamp <= $__timeTo()
+ORDER BY 
+    a.timestamp;

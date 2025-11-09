@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS mill_state (
+    id SERIAL PRIMARY KEY,
+    time TIMESTAMPTZ NOT NULL,
+    serialNumber TEXT NOT NULL,
+    actionCommand TEXT,
+    actionState TEXT,
+    moduleState TEXT,
+    opcuaState TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS hbw_state (
+    time            TIMESTAMPTZ NOT NULL,
+    serialNumber    TEXT NOT NULL,
+    actionCommand   TEXT,
+    actionState     TEXT,
+    rackPosition    TEXT,
+    moduleState     TEXT,
+    opcuaState      TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS aiqs_state (
+    time           TIMESTAMPTZ NOT NULL,
+    serialNumber   TEXT NOT NULL,
+    actionCommand  TEXT,
+    actionState    TEXT,
+    checkResult    TEXT,
+    moduleState    TEXT,
+    opcuaState     TEXT,
+    loadType       TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS dps_state (
+    time           TIMESTAMPTZ NOT NULL,
+    serialNumber   TEXT NOT NULL,
+    actionCommand  TEXT,
+    actionState    TEXT,
+    moduleState    TEXT,
+    opcuaState     TEXT,
+    type           TEXT
+);
+

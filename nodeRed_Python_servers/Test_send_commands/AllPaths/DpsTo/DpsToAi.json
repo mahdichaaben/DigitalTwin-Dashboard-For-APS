@@ -1,0 +1,54 @@
+[
+      {
+    "topic": "fts/v1/ff/80F4/order",
+    "payload": {
+      "timestamp": "2025-02-28T10:09:40.800Z",
+      "orderId": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
+      "orderUpdateId": 1,
+      "description": "From DPS to AIQS",
+      "nodes": [
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["SVR4PW6408-2"]
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["SVR4PW6408-2", "2-SVR4LR8731"],
+          "action": {
+            "id": "6367b144-4350-434e-bfc8-6bb687dcef66",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "SVR4LR8731",
+          "linkedEdges": ["2-SVR4LR8731"],
+          "action": {
+            "type": "DOCK",
+            "id": "d1b48ccd-8948-4ec7-a358-fa8f732b5c8e",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR4PW6408-2",
+          "length": 380,
+          "linkedNodes": ["SVR4PW6408", "2"]
+        },
+        {
+          "id": "2-SVR4LR8731",
+          "length": 380,
+          "linkedNodes": ["2", "SVR4LR8731"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  }
+]

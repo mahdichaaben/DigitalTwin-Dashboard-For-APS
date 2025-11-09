@@ -1,0 +1,36 @@
+[
+  {
+    "orderId": "0",
+    "orderUpdateId": 3,
+    "action": {
+      "id": "action-0001",
+      "command": "PICK",
+      "metadata": {
+        "type": "BLUE"
+      }
+    }
+  },
+  {
+    "orderId": "0",
+    "orderUpdateId": 4,
+    "action": {
+      "id": "action-0002",
+      "command": "DRILL",
+      "metadata": {
+        "duration": 20,
+        "type": "BLUE"
+      }
+    }
+  },
+  {
+    "orderId": "0",
+    "orderUpdateId": 5,
+    "action": {
+      "id": "action-0003",
+      "command": "DROP"
+    },
+    "metadata": {
+      "type": "BLUE"
+    }
+  }
+]

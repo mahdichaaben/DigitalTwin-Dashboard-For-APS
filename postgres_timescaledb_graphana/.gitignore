@@ -1,0 +1,7 @@
+# Ignore persistent Docker volumes
+grafana_data/
+postgres_data/
+pgadmin-data/
+
+# Ignore secrets (optional)
+.env

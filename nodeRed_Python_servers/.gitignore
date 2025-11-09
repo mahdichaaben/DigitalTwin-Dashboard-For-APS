@@ -1,0 +1,20 @@
+# Ignore all .env files recursively
+**/.env
+**/*.conf
+# Ignore all .pem files recursively
+**/*.pem
+
+**/*-env/
+
+**/nodered_data/
+
+
+
+# Ignore MongoDB volume data
+volumes/
+mongodata/
+**/data/db/
+**/data/journal/
+**/data/configdb/
+
+data/

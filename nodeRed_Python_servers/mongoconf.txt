@@ -1,0 +1,31 @@
+  db:
+    container_name: mongo_container
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_DATABASE=aps
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    networks:
+      - opcua-net
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodata:/data/db
+
+  mongo-express:
+    container_name: mongoClient_container
+    image: mongo-express
+    depends_on:
+      - db
+    networks:
+      - opcua-net
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo_container
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=pass
+      - ME_CONFIG_BASICAUTH_USERNAME=mahdi
+      - ME_CONFIG_BASICAUTH_PASSWORD=mahdi
+    ports:
+      - '8083:8081'
+    volumes:
+      - mongodata:/data/db

@@ -1,0 +1,366 @@
+[
+  {
+    "topic": "fts/v1/ff/4gcx/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:55:16.400Z",
+      "orderId": "9da5c06d-2d1d-4312-a49a-ec7d72f4243c",
+      "orderUpdateId": 0,
+      "nodes": [
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": [],
+          "action": {
+            "type": "DOCK",
+            "id": "dd463475-c043-43df-86fb-6d9cde3b2a30",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [],
+      "serialNumber": "4gcx"
+    }
+  },
+
+  {
+    "topic": "fts/v1/ff/4gcx/order",
+
+    "payload": {
+      "timestamp": "2025-03-06T10:16:24.117Z",
+      "serialNumber": "80F4",
+      "actions": [
+        {
+          "actionType": "findInitialDockPosition",
+          "actionId": "ad5328c1-2d42-46fe-9fd8-c29831f5871d",
+          "metadata": {
+            "nodeId": "SVR4PW6408"
+          }
+        }
+      ]
+    }
+  },
+
+  {
+    "topic": "module/v1/ff/DPS001/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:55:31.618Z",
+      "orderId": "9da5c66d-2d1d-4312-a49a-ec7d72f4243c",
+      "orderUpdatedId": 2,
+      "nodes": [
+        {
+          "id": "SVR4PW6408",
+          "linkedEdges": ["SVR4PW6408-2"]
+        },
+        {
+          "id": "2",
+          "linkedEdges": ["SVR4PW6408-2", "2-1"],
+          "action": {
+            "id": "6367b144-4350-434e-bfc8-6bb687dcef66",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["2-1", "1-SVR5H85409"],
+          "action": {
+            "id": "9140b17e-d5e4-42ae-888e-557d491d379c",
+            "type": "PASS"
+          }
+        },
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["1-SVR5H85409"],
+          "action": {
+            "type": "DOCK",
+            "id": "ab916e13-a5f2-4b00-bbd4-e18f0940cfa3",
+            "metadata": {
+              "loadId": "043169ca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR4PW6408-2",
+          "length": 380,
+          "linkedNodes": ["SVR4PW6408", "2"]
+        },
+        {
+          "id": "2-1",
+          "length": 360,
+          "linkedNodes": ["2", "1"]
+        },
+        {
+          "id": "1-SVR5H85409",
+          "length": 380,
+          "linkedNodes": ["1", "SVR5H85409"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  },
+  {
+    "topic": "module/v1/ff/HBW001/order",
+
+    "payload": {
+      "ts": "2025-02-28T09:55:45.982Z",
+      "stockItems": [
+        {
+          "workpiece": {
+            "id": "",
+            "type": "",
+            "state": "RAW"
+          },
+          "location": "A1",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "",
+            "type": "",
+            "state": "RAW"
+          },
+          "location": "C1",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "",
+            "type": "",
+            "state": "RAW"
+          },
+          "location": "C2",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "04d998ca341290",
+            "type": "RED",
+            "state": "RAW"
+          },
+          "location": "B2",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "044768ca341291",
+            "type": "WHITE",
+            "state": "RAW"
+          },
+          "location": "A3",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "047798ca341291",
+            "type": "RED",
+            "state": "RAW"
+          },
+          "location": "A2",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "042369ca341291",
+            "type": "WHITE",
+            "state": "RAW"
+          },
+          "location": "B3",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "04e26aca341290",
+            "type": "BLUE",
+            "state": "RAW"
+          },
+          "location": "C3",
+          "hbw": "SVR5H85409"
+        },
+        {
+          "workpiece": {
+            "id": "044998ca341291",
+            "type": "RED",
+            "state": "RAW"
+          },
+          "location": "B1",
+          "hbw": "SVR5H85409"
+        }
+      ]
+    }
+  },
+
+  {
+    "topic": "module/v1/ff/HBW001/order",
+    "payload": {
+      "serialNumber": "HBW001",
+      "orderId": "0",
+      "orderUpdateId": 3,
+      "action": {
+        "id": "action-0001",
+        "command": "PICK",
+        "rackPosition": "A2",
+
+        "metadata": {
+          "type": "BLUE"
+        }
+      }
+    }
+  },
+  {
+    "topic": "module/v1/ff/HBW001/order",
+    "payload": {
+      "serialNumber": "HBW001",
+      "orderId": "0",
+      "orderUpdateId": 3,
+      "action": {
+        "id": "action-0001",
+        "command": "DROP",
+        "rackPosition": "A2",
+
+        "metadata": {
+          "type": "BLUE"
+        }
+      }
+    }
+  },
+
+  {
+    "topic": "module/v1/ff/HBW001/order",
+    "payload": {
+      "timestamp": "2025-02-28T09:58:25.039Z",
+      "orderId": "b5d370e3-c585-4b51-b4cb-d79bfd8d2542",
+      "orderUpdateId": 2,
+      "nodes": [
+        {
+          "id": "SVR5H85409",
+          "linkedEdges": ["SVR5H85409-1"]
+        },
+        {
+          "id": "1",
+          "linkedEdges": ["SVR5H85409-1", "1-3"],
+          "action": {
+            "id": "6d3c47c7-01bb-4040-ab3e-84e5a069ed12",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "3",
+          "linkedEdges": ["1-3", "3-SVR5H85384"],
+          "action": {
+            "id": "436a70c6-00b6-42b3-9fa0-ba321a809c16",
+            "type": "TURN",
+            "metadata": {
+              "direction": "RIGHT"
+            }
+          }
+        },
+        {
+          "id": "SVR5H85384",
+          "linkedEdges": ["3-SVR5H85384"],
+          "action": {
+            "type": "DOCK",
+            "id": "6d8631b4-a0d1-4e13-a962-23e07a143b1f",
+            "metadata": {
+              "loadId": "04e26aca341290",
+              "loadType": "BLUE",
+              "loadPosition": "1"
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "SVR5H85409-1",
+          "length": 380,
+          "linkedNodes": ["SVR5H85409", "1"]
+        },
+        {
+          "id": "1-3",
+          "length": 360,
+          "linkedNodes": ["1", "3"]
+        },
+        {
+          "id": "3-SVR5H85384",
+          "length": 380,
+          "linkedNodes": ["3", "SVR5H85384"]
+        }
+      ],
+      "serialNumber": "4gcx"
+    }
+  },
+
+  {
+    "topic": "module/v1/ff/DRILL001/order",
+    "payload": {
+      "serialNumber": "DRILL001",
+      "orderId": "0",
+      "orderUpdateId": 3,
+      "action": {
+        "id": "action-0001",
+        "command": "PICK",
+
+        "metadata": {
+          "type": "BLUE"
+        }
+      }
+    }
+  },
+  {
+    "topic": "module/v1/ff/DRILL001/order",
+    "payload": {
+      "serialNumber": "DRILL001",
+      "orderId": "0",
+      "orderUpdateId": 4,
+      "action": {
+        "id": "action-0002",
+        "command": "DRILL",
+        "metadata": {
+          "duration": 20,
+          "type": "BLUE"
+        }
+      }
+    }
+  },
+  {
+    "topic": "module/v1/ff/DRILL001/order",
+    "payload": {
+      "serialNumber": "DRILL001",
+      "orderId": "0",
+      "orderUpdateId": 4,
+      "action": {
+        "id": "action-0002",
+        "command": "DRILL",
+        "metadata": {
+          "duration": 20,
+          "type": "BLUE"
+        }
+      }
+    }
+  },
+
+  {
+    "topic": "module/v1/ff/DRILL001/order",
+
+    "payload": {
+      "serialNumber": "DRILL001",
+      "orderId": "0",
+      "orderUpdateId": 5,
+      "action": {
+        "id": "action-0003",
+        "command": "DROP"
+      },
+      "metadata": {
+        "type": "BLUE"
+      }
+    }
+  }
+]

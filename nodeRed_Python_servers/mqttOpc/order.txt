@@ -1,0 +1,56 @@
+
+module/v1/ff/DRILL001/order    ///   module/v1/ff/DRILL001/state
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0001",
+    "command": "PICK",
+
+    "metadata": {   
+        "type":  "BLUE"                  
+    }
+    
+  }
+
+}
+
+
+
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 4,
+  "action": {
+    "id": "action-0002",
+    "command": "DRILL",
+      "metadata": {   
+    "duration": 20,                      
+    "type":  "BLUE"                  
+   }
+    
+  }
+
+}
+
+
+
+{
+  "serialNumber": "DRILL001",
+  "orderId": "0",
+  "orderUpdateId": 3,
+  "action": {
+    "id": "action-0003",
+    "command": "DROP"
+    
+  },
+  "metadata": {                      
+    "type":  "BLUE"                  
+   }
+}
+
+
+module/v1/ff/NodeRed/AIQS001
