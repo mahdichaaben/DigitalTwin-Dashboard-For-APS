@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/layouts/*": ["src/layouts/*"],
+      "@/views/*": ["src/views/*"],
+      "@/routes/*": ["src/routes/*"],
+      "@/context/*": ["src/context/*"],
+      "@/firebase/*": ["src/firebase/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/services/*": ["src/services/*"],
+      "@/api/*": ["src/api/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/types/*": ["src/types/*"]
+      
+    }
+  }
+}
