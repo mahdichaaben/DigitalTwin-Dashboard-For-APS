@@ -1,4 +1,4 @@
-# Digital Twin Dashboard for APS
+# Digital Twin Dashboard for Smart Factory
 
 > **Industry 4.0 Smart Dashboard & Visualization Platform**
 
