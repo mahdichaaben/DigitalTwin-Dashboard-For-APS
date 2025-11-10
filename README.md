@@ -89,23 +89,6 @@ Full-stack platform bridging physical manufacturing equipment with digital servi
 ![HBW Storage](images/hbw.png)
 
 ---
-
-
-## 💻 Development
-
-**Migrations:**
-```powershell
-dotnet ef migrations add MigrationName --project backend_dash
-dotnet ef database update --project backend_dash
-```
-
-**Tests:**
-```powershell
-dotnet test                  # Backend
-npm test                     # Frontend
-```
-
----
 ## 🔗 Resources
 
 - **Demo Video:** [Watch on YouTube](https://www.youtube.com/watch?v=sUNCbplIqJw&feature=youtu.be)
