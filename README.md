@@ -45,7 +45,7 @@ Full-stack platform bridging physical manufacturing equipment with digital servi
 **Manager Role:** User registration, access control, system administration  
 **Operator Role:** Production orders, workpiece management, monitoring, 3D twin visualization, alerts
 
-### Domain-Driven Design Class Diagram
+###  Class Diagram for Domain Entities
 
 ![Class Diagram](images/ClassDiagrame.drawio%20(4)%20(1).png)
 
