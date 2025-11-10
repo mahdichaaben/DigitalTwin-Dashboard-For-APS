@@ -15,6 +15,8 @@ artifacts/
 *.vspscc
 *.tmp
 
+
+
 # NuGet packages
 *.nupkg
 *.snupkg
@@ -34,3 +36,6 @@ Thumbs.db
 # Debug files
 *.pdb
 *.cache
+
+
+*.env
