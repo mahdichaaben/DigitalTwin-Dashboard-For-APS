@@ -1,4 +1,4 @@
-# Digital Twin Dashboard for APS
+# Digital Twin Dashboard for Smart Factory
 
 > **Industry 4.0 Smart Dashboard & Visualization Platform**
 
@@ -45,12 +45,6 @@ Full-stack platform bridging physical manufacturing equipment with digital servi
 **Manager Role:** User registration, access control, system administration  
 **Operator Role:** Production orders, workpiece management, monitoring, 3D twin visualization, alerts
 
-### Domain Model
-
-![Class Diagram](images/ClassDiagrame.drawio%20(4)%20(1).png)
-
-**Core Entities:** User, Factory, Order (Production/Store), Workpiece, DigitalElement (FixedModule/TransportModule), Command, Sensor, Alert, Logs (Module/Sensor/Workpiece)
-
 ---
 
 ## ✨ Key Features
@@ -87,23 +81,6 @@ Full-stack platform bridging physical manufacturing equipment with digital servi
 ### 3D Digital Twin
 ![AIQS 3D View](images/aiqs3d.png)
 ![HBW Storage](images/hbw.png)
-
----
-
-
-## 💻 Development
-
-**Migrations:**
-```powershell
-dotnet ef migrations add MigrationName --project backend_dash
-dotnet ef database update --project backend_dash
-```
-
-**Tests:**
-```powershell
-dotnet test                  # Backend
-npm test                     # Frontend
-```
 
 ---
 ## 🔗 Resources
